@@ -1,0 +1,219 @@
+
+.photo {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+}
+
+
+.favorite-item {
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border-radius: 12px;
+  color: #111;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.favorite-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+}
+
+/* Чередуем фон и цвет текста */
+.favorite-item:nth-of-type(odd) {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #111;
+}
+
+.favorite-item:nth-of-type(even) {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #eee;
+  flex-direction: row-reverse;
+}
+
+/*  Заголовки (с анимацией сверху вниз) */
+.favorite-item h2 {
+  font-family: 'Poppins', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: left;
+  color: inherit;
+  transition: color 0.28s ease, text-shadow 0.28s ease;
+
+  /* эффект появления сверху вниз */
+  opacity: 0;
+  transform: translateY(-20px) scale(0.95);
+  animation: fadeDownUp 1s ease forwards;
+  animation-delay: 0s;
+}
+
+.favorite-item h2:hover {
+  color: #a566ff;
+  text-shadow: 0 0 10px rgba(165,102,255,0.6);
+}
+
+/* Заголовки внутри текстового блока (с анимацией сверху вниз)  */
+.text-block h2,
+.text-block h3 {
+  opacity: 0;
+  transform: translateY(-18px);
+  animation: fadeDownUp 1s ease forwards;
+  animation-delay: 0s; 
+}
+
+/* Абзацы внутри текстового блока (с анимацией снизу вверх) */
+.text-block p {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeUpText 1s ease forwards;
+  animation-delay: 0.6s; 
+}
+
+/* Блок текста (контейнер) */
+.text-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.divider {
+  height: 4px;
+  width: 60%;
+  margin: 2rem auto;
+  background: linear-gradient(to right, #111, #555, #111);
+  border-radius: 2px;
+}
+
+/*  Анимации  */
+@keyframes fadeDownUp {
+  from { opacity: 0; transform: translateY(-18px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fadeUpText {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .favorite-item h2,
+  .text-block h2,
+  .text-block h3,
+  .text-block p {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* -----------------------------
+   Адаптація під різні екрани
+------------------------------ */
+
+/* Великий екран / десктопи (понад 1024px) */
+.favorite-item .photo {
+  width: 300px;    /* фіксована ширина */
+  height: auto;
+  margin: 0 auto;  /* центр фото */
+}
+
+/* Ноутбуки та великі планшети (до 1024px) */
+@media (max-width: 1024px) {
+  .favorite-item {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .favorite-item .photo {
+    width: 300px;    
+    margin: 0 auto; 
+  }
+
+  .favorite-item h2 {
+    font-size: 1.4rem;
+  }
+
+  .text-block {
+    width: 100%;
+  }
+}
+
+/* Планшети менші (до 768px) */
+@media (max-width: 768px) {
+  .favorite-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .favorite-item .photo {
+    width: 80%;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .text-block {
+    align-items: center;
+    text-align: center;
+  }
+
+  .favorite-item p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
+/* Мобільні телефони (до 480px) */
+@media (max-width: 480px) {
+  .favorite-item {
+    padding: 1rem;
+  }
+
+  .favorite-item .photo {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .favorite-item h2 {
+    font-size: 1.2rem;
+  }
+
+  .favorite-item p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .divider {
+    width: 80%;
+  }
+
+  /* Чорні блоки (чітні) на мобільних */
+  .favorite-item:nth-of-type(even) {
+    flex-direction: column; 
+    align-items: center;    
+    text-align: center;
+  }
+
+  .favorite-item:nth-of-type(even) .photo {
+    margin: 0 auto; 
+  }
+}
+
