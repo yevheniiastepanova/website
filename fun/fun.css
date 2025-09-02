@@ -189,3 +189,13 @@
     gap: 1rem; /* на телефонах */
   }
 }
+
+.daily-photos .zoom-container video,
+.hobbies-photos .zoom-container video {
+  opacity: 1 !important;
+  z-index: 1 !important;
+  display: block;
+  object-fit: cover;
+}
+
+

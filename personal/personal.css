@@ -253,17 +253,19 @@ tr:hover {
     height: auto;
   }
 
+  /* Таблица с горизонтальным скроллом и одинаковым шрифтом во всех колонках */
   .goals table {
     display: block;
-    overflow-x: auto;
+    overflow-x: auto;      /* сохраняем ползунок */
     width: 100%;
   }
 
   .goals th,
   .goals td {
-    white-space: nowrap;
+    white-space: normal;   /* текст переносится */
     padding: 10px;
-    font-size: 0.9rem;
+    font-size: 0.9rem;     /* одинаковый размер текста во всех колонках */
+    line-height: 1.4;      /* удобочитаемый интервал */
   }
 }
 
