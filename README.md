@@ -17,16 +17,16 @@ This website presents personal information, skills, favorite places, experiences
 
 
 ### Home — Desktop View
-![Home Desktop](./screenshots/home-desktop.png)
+![Home Desktop](./screenshots/portfolio-website1.png)
 
 ### Skills Showcase — Desktop View
-![Skills Showcase](./screenshots/skills-desktop.png)
+![Skills Showcase](./screenshots/portfolio-website2.png)
 
 ### Favorite Places — Desktop View
-![Favorite Places](./screenshots/favorite-desktop.png)
+![Favorite Places](./screenshots/portfolio-website3.png)
 
 ### Skills Showcase — Mobile View
-![Skills Mobile](./screenshots/skills-mobile.png)
+![Skills Mobile](./screenshots/portfolio-website4png)
 
 
 ---
