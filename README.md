@@ -26,7 +26,7 @@ This website presents personal information, skills, favorite places, experiences
 ![Favorite Places](./screenshots/portfolio-website3.png)
 
 ### Skills Showcase — Mobile View
-![Skills Mobile](./screenshots/portfolio-website4png)
+![Skills Mobile](./screenshots/portfolio-website4.png)
 
 
 ---
